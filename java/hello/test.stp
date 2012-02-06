@@ -1,0 +1,5 @@
+probe hotspot.method_entry {
+    if(method == "test") {
+        printf("%s\n", probestr)
+    }
+}
