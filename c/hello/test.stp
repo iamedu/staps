@@ -1,0 +1,10 @@
+probe process("./a.out").function("test").call
+{
+    printf ("The parameter i in function test is %d\n", $i)
+}
+
+probe process("./a.out").statement("*@test.c:9")
+{
+    printf ("The parameter i in file test.c line 9 is %d\n", $i)
+}
+
